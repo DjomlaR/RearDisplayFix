@@ -33,6 +33,8 @@ Placing the APK in `priv-app` supposedly helps, but HyperOS still kills it insta
 I could have made it stand-alone by making a persistent notification for the apk, or even without apk, but that would require frequent polling to check for the screen state. I made it this way so that it has as small of impact on battery and resources as possible and to be as invisible as possible. Maybe it wouldn't have made much of difference but idk, since I'm not an android/java dev, this is just a side project with help of ai and lots of trial and error.
 
 ## Changelog
+### **v1.0.1**
+- Added missing subscreen state check, no more spammy superuser access messages.
 ### **v1.0.0**
 - Initial release
 
