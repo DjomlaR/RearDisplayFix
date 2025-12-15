@@ -1,0 +1,31 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.djomlar.reardisplayfix2">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:label="RearDisplayFix"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault.Light">
+
+    <meta-data android:name="xposedmodule" android:value="true"/>
+<meta-data android:name="xposedscope" android:value="android" />
+    <meta-data android:name="xposedminversion" android:value="82"/>
+    <meta-data android:name="xposedversion" android:value="82"/>
+    <meta-data android:name="xposeddescription" android:value="Make rear display persist when it gets disabled by Game turbo optimized apps"/>
+    <meta-data android:name="xposedcategory" android:value="UI tweaks"/>
+
+	<activity
+    android:name=".LauncherActivity"
+    android:exported="false"
+    android:theme="@android:style/Theme.NoDisplay"
+    android:excludeFromRecents="true"
+    android:noHistory="true"
+    android:taskAffinity=""
+    android:finishOnTaskLaunch="true"/>
+
+    </application>
+
+</manifest>
