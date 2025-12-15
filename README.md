@@ -1,4 +1,4 @@
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/:user/:repo/total)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/DjomlaR/RearDisplayFix/total)
 
 # RearDisplayFix
 
