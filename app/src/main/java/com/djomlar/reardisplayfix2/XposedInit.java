@@ -24,21 +24,15 @@ public class XposedInit implements IXposedHookLoadPackage {
                     pwmClass,
                     "startedGoingToSleep",
                     new XC_MethodHook() {
-
                         @Override
                         protected void beforeHookedMethod(MethodHookParam param) {
-
                             try {
-                                Context context =
-                                        (Context) Class
-                                                .forName("android.app.ActivityThread")
-                                                .getMethod("currentApplication")
-                                                .invoke(null);
+                                Context context = (Context) Class
+                                        .forName("android.app.ActivityThread")
+                                        .getMethod("currentApplication")
+                                        .invoke(null);
 
-                                if (context == null) {
-                                    XposedBridge.log("RearDisplayFix2: context is null");
-                                    return;
-                                }
+                                if (context == null) return;
 
                                 Intent i = new Intent();
                                 i.setClassName(
@@ -49,23 +43,15 @@ public class XposedInit implements IXposedHookLoadPackage {
 
                                 context.startActivity(i);
 
-                            } catch (Throwable t) {
-                                XposedBridge.log(
-                                        "RearDisplayFix2 ERROR starting activity: " + t
-                                );
+                            } catch (Throwable ignored) {
+                                // Ignore errors silently, nothing to log
                             }
                         }
                     }
             );
 
-            XposedBridge.log(
-                    "RearDisplayFix2: Hook installed on startedGoingToSleep"
-            );
-
-        } catch (Throwable t) {
-            XposedBridge.log(
-                    "RearDisplayFix2 ERROR installing hook: " + t
-            );
+        } catch (Throwable ignored) {
+            // Ignore errors silently
         }
     }
 }

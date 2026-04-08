@@ -8,8 +8,8 @@ android {
         applicationId "com.djomlar.reardisplayfix2"
         minSdk 30
         targetSdk 34
-        versionCode 6
-        versionName "1.1.4"
+        versionCode 7
+        versionName "1.1.6"
     }
 buildTypes {
         release {
@@ -27,6 +27,8 @@ buildTypes {
     }
 }
 dependencies {
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core:1.3.2'
     compileOnly files('libs/LSPosed_API.jar')
 }
 repositories {
