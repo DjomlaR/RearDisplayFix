@@ -35,7 +35,7 @@ I could have made it stand-alone by making a persistent notification for the apk
 
 ## Changelog
 ### **v1.1.6**
-- Maid sure to execute the command only when main display is turned off
+- Made sure to execute the command only when main display is turned off
 ### **v1.1.4**
 - Complete apk rewrite into lsposed module
 ### **v1.0.1**
